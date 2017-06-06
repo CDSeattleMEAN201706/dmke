@@ -22,7 +22,7 @@ function caller(amIaFunction){
 }
 
 function myDoubleConsoleLog(amIaFunction1, amIaFunction2){
-  if(typeof(amIaFunction1) == "function" && typeof(amIaFunction2) == "function"))
+  if(typeof(amIaFunction1) == "function" && typeof(amIaFunction2) == "function")
   {
     console.log(amIaFunction1, "", amIaFunction2)
   }
@@ -30,8 +30,7 @@ function myDoubleConsoleLog(amIaFunction1, amIaFunction2){
 
 function caller2(amIaFunctionLast){
   console.log("starting")
-  setTimeout(function () {
-
+  setTimeout(function(amIaFunctionlast) {
   }, 2);
   if(typeof(amIaFunctionLast) == "function"){
     amIaFunctionLast()
@@ -39,3 +38,5 @@ function caller2(amIaFunctionLast){
   console.log("ending?")
   return "interesting"
 }
+
+caller2(myDoubleConsoleLog)

@@ -5,30 +5,30 @@ function personMaker(nameIs){
 
     say_name: function(){
       alert(nameIs)
-      return self
+      return this
     },
 
     say_something: function(stringToSay){
       console.log(nameIs, " says ", stringToSay)
-      return self
+      return this
     },
 
     walk: function(){
       alert(nameIs, "is walking")
       distance_traveled += 3
-      return self
+      return this
     },
 
     run: function(){
       alert(nameIs, "is running")
       distance_traveled += 10
-      return self
+      return this
     },
 
     crawl: function(){
       alert(nameIs, "is crawling")
       distance_traveled += 1
-      return self
+      return this
     },
   })
 }
