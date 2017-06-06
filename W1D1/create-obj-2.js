@@ -1,33 +1,30 @@
 
 
-function VehicleConstructor(vehicleName, numberOfWheels, numberOfPassengers) {
-  let vehicle = {}
+function VehicleConstructor(vehicleName, numberOfWheels, numberOfPassengers, speed) {
+  this.name = vehicleName || "car"
+  this.wheels = numberOfWheels || 4
+  this.passengers = numberOfPassengers || 4
+  this.speed = speed || 60
 
-  vehicle.name = vehicleName || "car"
-  vehicle.wheels = numberOfWheels || 4
-  vehicle.passengers = numberOfPassengers || 4
-
-  vehicle.makeNoise (noise)=> {
+  this.makeNoise (noise)=> {
     let noise = noise || "Beep beep"
     console.log(noise)
   }
-
-  return vehicle
 }
 
-let myBike = VehicleConstructor("bike", 2, 1)
+let myBike = new VehicleConstructor("bike", 2, 1)
 
 myBike.makeNoise = (noise)=> {
   console.log("ring ring!")
 }
 
-let mySedan = VehicleConstructor("sedan")
+let mySedan = new VehicleConstructor("sedan")
 
 mySedan.makeNoise = (noise)=> {
   console.log("Honk Honk!")
 }
 
-let myBus = VehicleConstructor("bus", 4, 10)
+let myBus = new VehicleConstructor("bus", 4, 10)
 
 myBus.pickUp = (toPickup)=> {
   myBus.numberOfPassengers += newPassengers
