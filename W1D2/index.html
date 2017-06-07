@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        img{
+            width: 150px;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="deckOfCards.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>
+            <div id="buttons">
+                <button id="newGame">BEGIN NEW GAME OF DOOM!!!</button>
+            </div>
+        </h1>
+        <div id="gameDeck"></div>
+        <div id="dealer_hand"></div>
+        <div id="playerArea">
+            <div class="player">
+            <div id="playerOneHand"></div>
+            <div id="playerOneGuess">
+                <fieldset>
+                <legend>Player 1</legend>
+                <form action='process.php' method='post'>
+                    <select name='next_card'>
+                        <option value='male'>Higher</option>
+                        <option value='female'>Lower</option>
+                    </select>
+                    <input type='submit' value='Commit'>
+                </form>
+                </fieldset>
+            </div></div>
+            <div class="player">
+            <div id="playerTwoHand"></div>
+            <div id="playerTwoGuess">
+                <fieldset>
+                <legend>Player 2</legend>
+                <form action='process.php' method='post'>
+                    <select name='next_card'>
+                        <option value='male'>Higher</option>
+                        <option value='female'>Lower</option>
+                    </select>
+                    <input type='submit' value='Commit'>
+                </form>
+                </fieldset>        
+                </div></div>
+        </div>
+        <div id="resolveRound"></div>
+    </body>
+</html>

@@ -62,8 +62,8 @@ function Deck(){
 // Game Board constructor
 function GameBoard(){
 	// create deck for game
-	let gameDeck = new Deck()
-	let dealer_hand = []
+	this.gameDeck = new Deck()
+	this.dealer_hand = []
 
 	// shuffles deck, initializes players
 	this.startGame = () => {
@@ -103,7 +103,7 @@ function GameBoard(){
 		}
 
 		// this.resolveGame = () => {
-		// 	//if this.gameDeck.length == 0 {
+		// 	if this.gameDeck.length == 0 {
 		// 		if player_one.winnings.length > player_two.winnings.length {
 		// 			console.log("player one wins")
 		// 		} else if player_one.winnings.length < player_two.winnings.length {
@@ -111,12 +111,23 @@ function GameBoard(){
 		// 		} else {
 		// 			console.log("It's a tie")
 		// 		}
-		// 	//}
-		//
-		// 	}
-		}
+		// 	 }
+		// }
+}
 }
 
+$(document).ready(function(){
+    $('#newGame').click(function(){
+    alert("You have started a new game!");
+    $("#dealer_hand").append("<h3>Dealer's Hand</h3>");
+    $("#dealer_hand").append("<img src='images/ec.png'>");
+    $("#playerOneHand").append("<h3>Player 1's Hand</h3>");
+    $("#playerOneHand").append("<img src='images/c2.png'>");
+    $("#playerTwoHand").append("<h3>Player 2's Hand</h3>");
+    $("#playerTwoHand").append("<img src='images/h9.png'>");
+ });
+
+});
 
 
 
