@@ -1,0 +1,14 @@
+{
+  "name": "app-boiler-test",
+  "version": "1.0.0",
+  "description": "boiler test",
+  "main": "index.js",
+  "author": "dmke",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.5",
+    "path": "^0.12.7"
+  }
+}
