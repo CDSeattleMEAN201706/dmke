@@ -1,0 +1,14 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+<h5 *ngFor="let boxes of myArray">
+    <div class="box" [ngStyle]="{
+  'background-color': myArray[randomize(myArray)]
+}"> </div>
+  {{boxes}}
+</h5>
+<h2>Here are some links to help you start: </h2>
+
+

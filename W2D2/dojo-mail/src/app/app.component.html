@@ -1,0 +1,19 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <h5 *ngFor = "let item of myArray"> 
+    {{item.email}}
+    <div *ngIf = "item.importance"> 
+      high
+    </div>
+    <div *ngIf = "!item.importance"> 
+      low
+    </div>
+  </h5>
+
+</div>
+<h2>Here are some links to help you start: </h2>
+
+
