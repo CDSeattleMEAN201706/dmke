@@ -1,28 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-export class Hero {
-  id: number
-  name: string
-  // constructor(
-  //   // declaration of constructor parameter and type
-  //   // declaration of public property of same name
-  //   // initializes property with corresponding argument on instantiation 
-  //   public id: number,
-  //   public name: string) {}
-}
+import { HeroService } from './hero.service'
+import { Hero } from './hero'
 
-  const HEROES: Hero[] = [
-    { id: 11, name: 'Mr. Nice'},
-    { id: 12, name: 'Narco'},
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
-    ]
+// export class Hero {
+//   id: number
+//   name: string
+//   // constructor(
+//   //   // declaration of constructor parameter and type
+//   //   // declaration of public property of same name
+//   //   // initializes property with corresponding argument on instantiation 
+//   //   public id: number,
+//   //   public name: string) {}
+// }
 
 
 @Component({
@@ -92,26 +82,33 @@ export class Hero {
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  `]
-
-
+  `],
+  providers: [HeroService]
   //templateUrl: ['./app.component.html']
   //styleUrls: ['./app.component.css']
 })
 
 // Init properties using variable assignment
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Tour of Heroes'
-  heroes = HEROES
-
-  myHero = this.heroes[0]
-
+  heroes: Hero[]
   selectedHero: Hero
+
+  // dependency injection for better code
+  constructor(private heroService: HeroService){}
+  
+  getHeroes(): void {
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes)
+  }
+
+  ngOnInit(): void {
+    this.getHeroes()
+  }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero
   }
-
+  
 }
 
 // Init properties using a constructor
